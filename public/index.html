@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Spyfall</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content=" user-scalable=no" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="home" class="page">
+      <div id="logo">Spyfall</div>
+      <div id="username">Imię: <input type="text" id="username-input"></div>
+      <div id="show-rooms" class="menu-btn">Dołącz do gry</div>
+      <div id="create" class="menu-btn">Stwórz grę</div>
+    </div>
+    <div id="rooms" class="page" style="display:none;">
+      <div id="rooms-label"></div>
+      <div id="rooms-list"></div>
+      <div id="cancel-rooms" class="rooms-btn">Wróć</div>
+    </div>
+    <div id="lobby" class="page" style="display:none;">
+      <div id="lobby-wait" class="not-admin">Zaczekaj na rozpoczęcie gry</div>
+      <div id="lobby-time" class="admin">
+        <div id="lobby-time-label">Czas gry:</div>
+        <input type="radio" name="time-input" value=5 class="time-input" id="time-5" checked><label for="time-5">5 min</label> /
+        <input type="radio" name="time-input" value=7 class="time-input" id="time-7"><label for="time-7">7 min</label> /
+        <input type="radio" name="time-input" value=10 class="time-input" id="time-10"><label for="time-10">10 min</label>
+      </div>
+      <div id="players">
+        <div id="players-label">Gracze:</div>
+        <div id="players-list"></div>
+      </div>
+      <div id="cancel-lobby" class="lobby-btn">Wróć</div>
+      <div id="start" class="lobby-btn admin">Start</div>
+    </div>
+
+    <div id="game" class="page" style="display: none;">
+      <div id="time-left"></div>
+      <div id="player-name"></div>
+      <div id="player-location"></div>
+      <div id="player-role"></div>
+      <div id="locations-label">Miejsca:</div>
+      <div id="locations">
+        <div class="location">Szpital</div>
+        <div class="location">Restauracja</div>
+        <div class="location">Statek pasażerski</div>
+        <div class="location">Zoo</div>
+        <div class="location">Łódź podwodna</div>
+        <div class="location">Szkoła</div>
+        <div class="location">Stacja kosmiczna</div>
+        <div class="location">Teatr</div>
+        <div class="location">Ambasada</div>
+        <div class="location">Samolot</div>
+        <div class="location">Bank</div>
+        <div class="location">Kościół</div>
+        <div class="location">Namiot cyrkowy</div>
+        <div class="location">Korporacja</div>
+        <div class="location">Stacja polarna</div>
+        <div class="location">Supermarket</div>
+        <div class="location">Komisariat</div>
+        <div class="location">Plan filmowy</div>
+        <div class="location">Baza wojskowa</div>
+        <div class="location">Kasyno</div>
+        <div class="location">Pociąg pasażerski</div>
+        <div class="location">Statek piratów</div>
+        <div class="location">Hotel</div>
+        <div class="location">Plaża</div>
+      </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+  </body>
+</html>
