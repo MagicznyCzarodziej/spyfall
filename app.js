@@ -118,7 +118,7 @@ io.on('connection', (socket) => {
     const spyId = usersIds.splice(spyIndex, 1);
     console.log("Spy index: " + spyIndex + ", spyId: " + spyId);
     io.sockets.to(spyId).emit('game-started', {isSpy: true, time: time});
-
+    users[spyId] = null;
     // Choose roles for the rest of the players
     usersIds.forEach((userId) => {
       const roleIndex = Math.floor(Math.random()*roles.length);
@@ -147,7 +147,7 @@ io.on('connection', (socket) => {
     socket.leave(userRoom);
 
     // Close room
-    if (userRoom !== null && rooms[userRoom].adminId === socket.id) { // <- Cousing error on leaving game
+    if (userRoom !== null && rooms[userRoom].adminId === socket.id) {
       delete rooms[userRoom];
       socket.broadcast.emit('closed-room', userRoom); //Tell all users about closed room
       console.log(`IO | Room closed: ${userRoom}`);
