@@ -139,7 +139,7 @@ $(() => {
 
   // Start game
   $('#start').on('click', () => {
-    const time = $('input[name="time-input"]').val();
+    const time = $('input[name="time-input"]:checked').val();
     socket.emit('start-game', time);
   });
 
