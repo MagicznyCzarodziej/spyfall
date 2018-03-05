@@ -13,7 +13,7 @@ html {
 /* MENU */
 
 #logo {
-  font-size: 10rem;
+  font-size: 8rem;
   text-align: center;
   margin: 4rem 0 7rem 0;
 }
@@ -147,7 +147,7 @@ font-weight: bold;
 /* Game */
 
 #game {
-  /* text-align: center; */
+  text-align: center;
   font-size: 4rem;
 }
 #time-left {
@@ -157,6 +157,7 @@ font-weight: bold;
 #player-name {
   background-color: #eee;
   padding: 0.8rem 2rem;
+  font-weight: bold;
 }
 #player-location {
   padding: 0.8rem 2rem;
@@ -172,7 +173,6 @@ font-weight: bold;
   margin-top: 1rem;
   display: flex;
   flex-wrap: wrap;
-  /* flex-direction: column; */
 }
 #locations-label {
   font-style: normal;
@@ -182,19 +182,15 @@ font-weight: bold;
 }
 .location {
   padding: 0.2rem 1rem;
-  text-align: center;
-  height: 9rem;
   flex-grow: 1;
-  flex-basis: 45%;
+  flex-basis: 49%;
   font-size: 3.5rem;
   box-sizing: border-box;
-  margin: 0.2rem 0.2rem;
-  background-color: #ddd;
+  border-bottom: 0.1rem solid #ddd;
   transition: 0.2s;
 }
 .location.selected {
-  background-color: #2980b9;
-  color: #eee;
+  text-decoration: line-through;
 }
 .admin {
   display: none;

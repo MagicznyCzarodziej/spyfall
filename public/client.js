@@ -146,10 +146,27 @@ $(() => {
   socket.on('game-started', (data) => {
     myRoomId = null;
     changePage('game');
-    $('#player-name').html(`Imię: <span>${username}</span>`);
+    $('#player-name').html(`${username}`);
     const isSpy = data.isSpy;
     const time = data.time;
-    $('#time-left').html(time);
+    $('#time-left').html(time + ':00');
+    // Start clock
+    let minutes = time;
+    let seconds = 0;
+    const clock = setInterval(() => {
+      if (minutes == 0 && seconds == 0) {
+        $('#time-left').html('Koniec czasu!').css('color', 'red');
+        clearInterval(clock);
+        return;
+      }
+      if (seconds < 0) {
+        seconds = 59;
+        minutes--;
+      }
+      $('#time-left').html(minutes + ':' + ('0' + seconds).slice(-2));
+      seconds--;
+    }, 1000);
+
     if (isSpy) {
       $('#player-role').html('<span>Jesteś</span> szpiegiem');
       $('#player-location').html('');

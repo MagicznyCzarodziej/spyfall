@@ -31,7 +31,7 @@ const locations = [{place: 'Szpital', roles: ['Pięlęgniarka', 'Lekarz', 'Chiru
 {place: 'Pociąg pasażerski', roles: ['Konduktor', 'Pasażer', 'Maszynista', ''], imageUrl: 'http://via.placeholder.com/300x150'},
 {place: 'Statek piratów', roles: ['Pirat', 'Bosman', 'Czarnobrody', 'Majtek', 'Żółtodziób', 'Kpt. Jack Sparrow'], imageUrl: 'http://via.placeholder.com/300x150'},
 {place: 'Hotel', roles: ['Gość', 'Gość', 'Recepcjonistka', 'Sprzątaczka', ''], imageUrl: 'http://via.placeholder.com/300x150'},
-{place: 'Plaża', roles: ['Plażowicz', 'Plażowicz', 'Sprzedawca hotdogów', 'Nudysta', 'Ratownik', 'Polak z parawanem'], imageUrl: 'http://via.placeholder.com/300x150'}];
+{place: 'Plaża', roles: ['Plażowicz', 'Fotograf', 'Sprzedawca hotdogów', 'Nudysta', 'Ratownik', 'Polak z parawanem'], imageUrl: 'http://via.placeholder.com/300x150'}];
 
 app.use(express.static('public'));
 
