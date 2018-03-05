@@ -11,24 +11,25 @@ html {
 }
 
 /* MENU */
-
+#home {
+  text-align: center;
+}
 #logo {
   font-size: 8rem;
-  text-align: center;
   margin: 4rem 0 7rem 0;
 }
 #username {
   font-size: 5rem;
   color: #555;
-  text-align: center;
   margin-bottom: 6rem;
 }
 #username-input {
-  border: none;
-  width: 32rem;
-  color: #2980b9;
+  width: 36rem;
   font-size: 4rem;
   font-family: Rajdhani, sans-serif;
+  text-align: center;
+  color: #2980b9;
+  border: none;
   border-bottom: 0.1rem solid #555;
 }
 #username-input:focus {
@@ -52,7 +53,6 @@ html {
 #show-rooms {
 font-weight: bold;
 }
-
 /* ROOMS */
 
 #rooms {
@@ -148,26 +148,18 @@ font-weight: bold;
 
 #game {
   text-align: center;
-  font-size: 4rem;
+  font-size: 3rem;
 }
 #time-left {
   font-size: 8rem;
   text-align: center;
 }
-#player-name {
-  background-color: #eee;
-  padding: 0.8rem 2rem;
-  font-weight: bold;
-}
 #player-location {
-  padding: 0.8rem 2rem;
-  height: 20rem;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 #player-role {
-  background-color: #eee;
-  padding: 0.8rem 2rem;
+}
+#player-role span, #player-location span {
+  font-weight: bold;
 }
 #locations {
   margin-top: 1rem;
@@ -175,16 +167,18 @@ font-weight: bold;
   flex-wrap: wrap;
 }
 #locations-label {
+  margin-top: 1rem;
   font-style: normal;
   text-align: center;
-  font-size: 5rem;
+  font-size: 3.5rem;
+  font-weight: bold;
   color: #111;
 }
 .location {
-  padding: 0.2rem 1rem;
+  padding: 0.3rem 1rem;
   flex-grow: 1;
   flex-basis: 49%;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   box-sizing: border-box;
   border-bottom: 0.1rem solid #ddd;
   transition: 0.2s;

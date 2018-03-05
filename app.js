@@ -8,30 +8,30 @@ const rooms = {};
 const users = {}; // {userId:roomId/null}
 
 // Game
-const locations = [{place: 'Szpital', roles: ['Pięlęgniarka', 'Lekarz', 'Chirurg', 'Kierownik oddziału', 'Salowa', 'Pacjent'], imageUrl: 'http://via.placeholder.com/300x150'},
-{place: 'Restauracja', roles: ['Szef kuchni', 'Kucharz', 'Właściciel', 'Magda Gessler', 'Gość', 'Gość', 'Bloger kulinarny'], imageUrl: 'http://via.placeholder.com/300x150'},
-{place: 'Statek pasażerski', roles: ['Kucharz', 'Pasażer', 'Pasażer', 'Kapitan', 'Członek załogi', 'Mechanik'], imageUrl: 'http://via.placeholder.com/300x150'},
-{place: 'Zoo', roles: ['Zwiedzający', 'Dyrektor', 'Karmiciel zwierząt', 'Sprzątacz', 'Przewodnik', 'Kierownik ochrony'], imageUrl: 'http://via.placeholder.com/300x150'},
-{place: 'Łódź podwodna', roles: ['Kapitan', 'Żołnierz', 'Nawigator', 'Radiowec', 'Mechanik', 'Członek załogi'], imageUrl: 'http://via.placeholder.com/300x150'},
-{place: 'Szkoła', roles: ['Uczeń', 'Uczeń', 'Nauczyciel', 'Nauczyciel', 'Sprzątaczka', 'Dyrektor', 'Kierownik', 'Konserwator', 'Psycholog'], imageUrl: 'http://via.placeholder.com/300x150'},
-{place: 'Stacja kosmiczna', roles: ['Astronauta', 'Kosmonauta', 'Astronauta', 'Kosmonauta','Astronauta', 'Tajkonauta'], imageUrl: 'http://via.placeholder.com/300x150'},
-{place: 'Teatr', roles: ['Aktor', 'Aktor', 'Aktor', 'Reżyser', 'Scenarzysta', 'Charakteryzator', 'Oświetleniowiec', 'Widz'], imageUrl: 'http://via.placeholder.com/300x150'},
-{place: 'Ambasada', roles: ['Kierownik ochrony', 'Sprzątaczka', 'Pracownik', 'Konsul', 'Księgowa', 'Sekretarz'], imageUrl: 'http://via.placeholder.com/300x150'},
-{place: 'Samolot', roles: ['Pasażer', 'Pasażer', 'Stewardessa', 'Pilot', 'Drugi pilot', 'Tajny ochroniarz'], imageUrl: 'http://via.placeholder.com/300x150'},
-{place: 'Bank', roles: ['Kasjer', 'Ochroniarz', 'Klient', 'Konwojent', 'Rabuś'], imageUrl: 'http://via.placeholder.com/300x150'},
-{place: 'Kościół', roles: ['Ksiądz', 'Ministrant', 'Kościelny', 'Organista', 'Biskup', 'Wierny'], imageUrl: 'http://via.placeholder.com/300x150'},
-{place: 'Namiot cyrkowy', roles: ['Klaun', 'Treser zwierząt', 'Człowiek guma', 'Widz', 'Połykacz ostrzy', 'Żongler'], imageUrl: 'http://via.placeholder.com/300x150'},
-{place: 'Korporacja', roles: ['Prezes', 'Korposzczur', 'Sprzątaczka', 'Sekretarka', 'Manager', 'Dyrektor', 'Specjalista PR'], imageUrl: 'http://via.placeholder.com/300x150'},
-{place: 'Stacja polarna', roles: ['Naukowiec', 'Naukowiec', 'Lekarz', 'Badacz', 'Klimatolog', 'Geolog'], imageUrl: 'http://via.placeholder.com/300x150'},
-{place: 'Supermarket', roles: ['Kasjerka', 'Ochroniarz', 'Klient', 'Prezes', 'Kierownik', 'Sprzątaczka'], imageUrl: 'http://via.placeholder.com/300x150'},
-{place: 'Komisariat', roles: ['Policjant', 'Komendant', 'Aspirant', 'Porucznik', 'Ojciec Mateusz', 'Detektyw', 'Konfident'], imageUrl: 'http://via.placeholder.com/300x150'},
-{place: 'Plan filmowy', roles: ['Reżyser', 'Scenarzysta', 'Scenograf', 'Charakteryzator', 'Aktor', 'Operator kamery'], imageUrl: 'http://via.placeholder.com/300x150'},
-{place: 'Baza wojskowa', roles: ['Żołnierz', 'Czołgista', 'Snajper', 'Podporucznik', 'Szeregowy', 'Pułkownik'], imageUrl: 'http://via.placeholder.com/300x150'},
-{place: 'Kasyno', roles: ['Gracz', 'Kierownik ochrony', 'Prezes', 'Krupier', 'Hostessa', 'Pokerzysta'], imageUrl: 'http://via.placeholder.com/300x150'},
-{place: 'Pociąg pasażerski', roles: ['Konduktor', 'Pasażer', 'Maszynista', ''], imageUrl: 'http://via.placeholder.com/300x150'},
-{place: 'Statek piratów', roles: ['Pirat', 'Bosman', 'Czarnobrody', 'Majtek', 'Żółtodziób', 'Kpt. Jack Sparrow'], imageUrl: 'http://via.placeholder.com/300x150'},
-{place: 'Hotel', roles: ['Gość', 'Gość', 'Recepcjonistka', 'Sprzątaczka', ''], imageUrl: 'http://via.placeholder.com/300x150'},
-{place: 'Plaża', roles: ['Plażowicz', 'Fotograf', 'Sprzedawca hotdogów', 'Nudysta', 'Ratownik', 'Polak z parawanem'], imageUrl: 'http://via.placeholder.com/300x150'}];
+const locations = [{place: 'Szpital', roles: ['Pięlęgniarka', 'Lekarz', 'Chirurg', 'Kierownik oddziału', 'Salowa', 'Pacjent']},
+{place: 'Restauracja', roles: ['Szef kuchni', 'Kucharz', 'Właściciel', 'Magda Gessler', 'Gość', 'Gość', 'Bloger kulinarny']},
+{place: 'Statek pasażerski', roles: ['Kucharz', 'Pasażer', 'Pasażer', 'Kapitan', 'Członek załogi', 'Mechanik']},
+{place: 'Zoo', roles: ['Zwiedzający', 'Dyrektor', 'Karmiciel zwierząt', 'Sprzątacz', 'Przewodnik', 'Kierownik ochrony']},
+{place: 'Łódź podwodna', roles: ['Kapitan', 'Żołnierz', 'Nawigator', 'Radiowec', 'Mechanik', 'Członek załogi']},
+{place: 'Szkoła', roles: ['Uczeń', 'Uczeń', 'Nauczyciel', 'Nauczyciel', 'Sprzątaczka', 'Dyrektor', 'Kierownik', 'Konserwator', 'Psycholog']},
+{place: 'Stacja kosmiczna', roles: ['Astronauta', 'Kosmonauta', 'Astronauta', 'Kosmonauta','Astronauta', 'Tajkonauta']},
+{place: 'Teatr', roles: ['Aktor', 'Aktor', 'Aktor', 'Reżyser', 'Scenarzysta', 'Charakteryzator', 'Oświetleniowiec', 'Widz']},
+{place: 'Ambasada', roles: ['Kierownik ochrony', 'Sprzątaczka', 'Pracownik', 'Konsul', 'Księgowa', 'Sekretarz']},
+{place: 'Samolot', roles: ['Pasażer', 'Pasażer', 'Stewardessa', 'Pilot', 'Drugi pilot', 'Tajny ochroniarz']},
+{place: 'Bank', roles: ['Kasjer', 'Ochroniarz', 'Klient', 'Konwojent', 'Rabuś']},
+{place: 'Kościół', roles: ['Ksiądz', 'Ministrant', 'Kościelny', 'Organista', 'Biskup', 'Wierny']},
+{place: 'Namiot cyrkowy', roles: ['Klaun', 'Treser zwierząt', 'Człowiek guma', 'Widz', 'Połykacz ostrzy', 'Żongler']},
+{place: 'Korporacja', roles: ['Prezes', 'Korposzczur', 'Sprzątaczka', 'Sekretarka', 'Manager', 'Dyrektor', 'Specjalista PR']},
+{place: 'Stacja polarna', roles: ['Naukowiec', 'Naukowiec', 'Lekarz', 'Badacz', 'Klimatolog', 'Geolog']},
+{place: 'Supermarket', roles: ['Kasjerka', 'Ochroniarz', 'Klient', 'Prezes', 'Kierownik', 'Sprzątaczka']},
+{place: 'Komisariat', roles: ['Policjant', 'Komendant', 'Aspirant', 'Porucznik', 'Ojciec Mateusz', 'Detektyw', 'Konfident']},
+{place: 'Plan filmowy', roles: ['Reżyser', 'Scenarzysta', 'Scenograf', 'Charakteryzator', 'Aktor', 'Operator kamery']},
+{place: 'Baza wojskowa', roles: ['Żołnierz', 'Czołgista', 'Snajper', 'Podporucznik', 'Szeregowy', 'Pułkownik']},
+{place: 'Kasyno', roles: ['Gracz', 'Kierownik ochrony', 'Prezes', 'Krupier', 'Hostessa', 'Pokerzysta']},
+{place: 'Pociąg pasażerski', roles: ['Konduktor', 'Pasażer', 'Maszynista', 'Mechanik', 'Kobieta z psem']},
+{place: 'Statek piratów', roles: ['Pirat', 'Bosman', 'Czarnobrody', 'Majtek', 'Żółtodziób', 'Kpt. Jack Sparrow']},
+{place: 'Hotel', roles: ['Gość', 'Gość', 'Recepcjonistka', 'Sprzątaczka', 'Menadżer', 'Odźwierny']},
+{place: 'Plaża', roles: ['Plażowicz', 'Fotograf', 'Sprzedawca hotdogów', 'Nudysta', 'Ratownik', 'Polak z parawanem']}];
 
 app.use(express.static('public'));
 
@@ -124,7 +124,7 @@ io.on('connection', (socket) => {
       const roleIndex = Math.floor(Math.random()*roles.length);
       const role = roles.splice(roleIndex, 1);
 
-      io.sockets.to(userId).emit('game-started', {isSpy: false, location: locationName, role: role, imageUrl: locationImage, time: time});
+      io.sockets.to(userId).emit('game-started', {isSpy: false, location: locationName, role: role, time: time});
       io.sockets.connected[userId].leave(userRoom);
       users[userId] = null;
     });

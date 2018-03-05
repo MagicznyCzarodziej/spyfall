@@ -146,7 +146,7 @@ $(() => {
   socket.on('game-started', (data) => {
     myRoomId = null;
     changePage('game');
-    $('#player-name').html(`${username}`);
+    // $('#player-name').html(`${username}`);
     const isSpy = data.isSpy;
     const time = data.time;
     $('#time-left').html(time + ':00');
@@ -174,9 +174,8 @@ $(() => {
     } else {
       const role = data.role;
       const location = data.location;
-      const imageUrl = data.imageUrl;
       $('#player-role').html(`Postać: <span>${role}</span>`);
-      $('#player-location').show().css('background-image', `url("${imageUrl}")`);
+      $('#player-location').show();
       $('#player-location').html(`Miejsce: <span>${location}</span>`);
     }
   });
@@ -185,4 +184,10 @@ $(() => {
   $('.location').on('click', function() {
     $(this).toggleClass('selected');
   });
+
+  // Toggle role and location
+  // $('#player-role').on('click', () => {
+  //   $('#player-role').toggle();
+  //   $('#player-location').toggle();
+  // });
 }); //DOM Ready

@@ -10,8 +10,8 @@
   </head>
   <body>
     <div id="home" class="page">
-      <div id="logo">Mamy kreta!</div>
-      <div id="username">Imię: <input type="text" id="username-input" max="20"></div>
+      <div id="logo">Spyfall</div>
+      <div id="username"><input type="text" name="username" id="username-input" maxlength="20" placeholder="Imię" autofill="on"></div>
       <div id="show-rooms" class="menu-btn">Dołącz do gry</div>
       <div id="create" class="menu-btn">Stwórz grę</div>
     </div>
@@ -24,8 +24,8 @@
       <div id="lobby-wait" class="not-admin">Zaczekaj na rozpoczęcie gry</div>
       <div id="lobby-time" class="admin">
         <div id="lobby-time-label">Czas gry:</div>
-        <input type="radio" name="time-input" value=5 class="time-input" id="time-5" checked><label for="time-5">5 min</label> /
-        <input type="radio" name="time-input" value=7 class="time-input" id="time-7"><label for="time-7">7 min</label> /
+        <input type="radio" name="time-input" value=5 class="time-input" id="time-5"><label for="time-5">5 min</label> /
+        <input type="radio" name="time-input" value=7 class="time-input" id="time-7" checked><label for="time-7">7 min</label> /
         <input type="radio" name="time-input" value=10 class="time-input" id="time-10"><label for="time-10">10 min</label>
       </div>
       <div id="players">
@@ -38,7 +38,6 @@
 
     <div id="game" class="page" style="display: none;">
       <div id="time-left"></div>
-      <div id="player-name"></div>
       <div id="player-location"></div>
       <div id="player-role"></div>
       <div id="locations-label">Miejsca:</div>
