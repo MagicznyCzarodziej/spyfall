@@ -154,6 +154,10 @@ font-weight: bold;
   font-size: 8rem;
   text-align: center;
 }
+#info-toggle {
+  font-size: 2rem;
+  color: #2980b9;
+}
 #player-location {
 }
 #player-role {
@@ -185,6 +189,19 @@ font-weight: bold;
 }
 .location.selected {
   text-decoration: line-through;
+}
+.game-btn {
+  margin: 2rem 0;
+  font-size: 4rem;
+  font-style: italic;
+  transition: 0.2s;
+  box-sizing: border-box;
+}
+.game-btn:active {
+  padding-left: 5rem;
+}
+#cancel-game {
+  color: #c0392b;
 }
 .admin {
   display: none;

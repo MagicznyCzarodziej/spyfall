@@ -4,6 +4,7 @@ $(() => {
   let isAdmin = false;
   let myRoomId = null;
   let tryingToJoin = false;
+  let clock;
 
   function changePage(page) {
     $('.page').hide();
@@ -99,7 +100,6 @@ $(() => {
     tryingToJoin = false;
 
     changePage('lobby');
-    console.log(users);
     users.forEach((user) => {
       $('#players-list').append(`<div class="player" data-user_id=${user.userId}>${user.username}</div>`)
     });
@@ -146,14 +146,13 @@ $(() => {
   socket.on('game-started', (data) => {
     myRoomId = null;
     changePage('game');
-    // $('#player-name').html(`${username}`);
     const isSpy = data.isSpy;
     const time = data.time;
     $('#time-left').html(time + ':00');
     // Start clock
     let minutes = time;
     let seconds = 0;
-    const clock = setInterval(() => {
+    clock = setInterval(() => {
       if (minutes == 0 && seconds == 0) {
         $('#time-left').html('Koniec czasu!').css('color', 'red');
         clearInterval(clock);
@@ -168,7 +167,7 @@ $(() => {
     }, 1000);
 
     if (isSpy) {
-      $('#player-role').html('<span>Jesteś</span> szpiegiem');
+      $('#player-role').html('Jesteś <span>szpiegiem</span>');
       $('#player-location').html('');
       $('#player-location').hide();
     } else {
@@ -185,9 +184,15 @@ $(() => {
     $(this).toggleClass('selected');
   });
 
+  // Leave game
+  $('#cancel-game').on('click', () => {
+    clearInterval(clock);
+    changePage('home');
+  });
+
   // Toggle role and location
-  // $('#player-role').on('click', () => {
-  //   $('#player-role').toggle();
-  //   $('#player-location').toggle();
-  // });
+  $('#player-info').on('click', () => {
+    $('#player-role').toggle();
+    $('#player-location').toggle();
+  });
 }); //DOM Ready

@@ -128,7 +128,7 @@ io.on('connection', (socket) => {
       io.sockets.connected[userId].leave(userRoom);
       users[userId] = null;
     });
-
+    socket.broadcast.emit('closed-room', userRoom); //Tell all users about closed room
     //Close room
     delete rooms[userRoom];
   });
