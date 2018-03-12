@@ -11,7 +11,6 @@ $(() => {
     $('#' + page).show();
 
     switch(page) {
-      case 'home': break;
       case 'lobby':
         $('#players-list').html(''); // Clear players list
         if (isAdmin) {
@@ -23,6 +22,8 @@ $(() => {
         }
         break;
       case 'game':
+        $('#player-role').show();
+        $('#player-location').show();
         $('.location').removeClass('selected'); // Clear selections from last game
         break;
     }
