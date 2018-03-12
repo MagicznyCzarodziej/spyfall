@@ -23,7 +23,10 @@ io.on('connection', (socket) => {
 
   // Register user
   socket.on('username', (username) => {
-    if (addedUser) return;
+    if (addedUser) {
+      if (username != socket.username) socket.username = username; // Change username
+      else return;
+    }
 
     socket.username = username;
     users[socket.id] = null;
