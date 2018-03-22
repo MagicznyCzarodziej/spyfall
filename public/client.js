@@ -1,10 +1,12 @@
 $(() => {
   const socket = io();
-  let username = 'Anonim';
+  let username = Cookies.get('username') || 'Anonim';
   let isAdmin = false;
   let myRoomId = null;
   let tryingToJoin = false;
   let clock;
+
+  $('#username-input').val(Cookies.get('username'));
 
   function changePage(page) {
     $('.page').hide();
@@ -33,7 +35,7 @@ $(() => {
   $('#create').on('click', () => {
     username = $('#username-input').val();
     if(username.length < 3) return; // Change this to show error
-
+    Cookies.set('username', username, {expires: new Date(9999, 12, 31)});
     socket.emit('username', username);
     socket.emit('create-room');
   });
