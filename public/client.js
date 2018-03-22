@@ -149,7 +149,7 @@ $(() => {
     changePage('game');
     const isSpy = data.isSpy;
     const time = data.time;
-    $('#time-left').html(time + ':00');
+    $('#time-left').html(time + ':00').css('color', 'black');
     // Start clock
     let minutes = time;
     let seconds = 0;

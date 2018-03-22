@@ -13,7 +13,6 @@ http.listen(PORT, () => {
 });
 
 // Game
-const locations = require('./lib/locations.js');
 const rooms = {};
 const users = {}; // {userId:roomId/null}
 
@@ -91,6 +90,7 @@ io.on('connection', (socket) => {
     if (rooms[userRoom].adminId !== socket.id) return;
 
     // Choose random location
+    const locations = require('./lib/locations.js');
     const location = locations[Math.floor(Math.random()*locations.length)];
     const locationName = location.place;
     const locationImage = location.imageUrl;
