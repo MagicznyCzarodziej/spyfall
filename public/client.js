@@ -61,6 +61,7 @@ $(() => {
   $('#show-rooms').on('click', () => {
     username = $('#username-input').val();
     if(username.length < 3) return; // Change this to show error
+    Cookies.set('username', username, {expires: new Date(9999, 12, 31)});
     socket.emit('username', username);
     socket.emit('show-rooms');
     changePage('rooms');
