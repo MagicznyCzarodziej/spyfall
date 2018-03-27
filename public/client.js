@@ -59,10 +59,6 @@ $(() => {
 
   // Show rooms list
   $('#show-rooms').on('click', () => {
-    username = $('#username-input').val();
-    if(username.length < 3) return; // Change this to show error
-    Cookies.set('username', username, {expires: new Date(9999, 12, 31)});
-    socket.emit('username', username);
     socket.emit('show-rooms');
     changePage('rooms');
   });
@@ -87,6 +83,10 @@ $(() => {
 
   // Join lobby
   $('#rooms-list').on('click', '.room', function () {
+    username = $('#username-input').val();
+    if(username.length < 3) return; // Change this to show error
+    Cookies.set('username', username, {expires: new Date(9999, 12, 31)});
+    socket.emit('username', username);
     const roomId = $(this).data('id');
     tryingToJoin = true;
     myRoomId = roomId;
@@ -123,6 +123,7 @@ $(() => {
 
   // New room
   socket.on('new-room', (roomId) => {
+    $('#rooms-label').text('Wybierz pokój:');
     $('#rooms-list').fadeOut(300, function () {
       $(this).prepend(`<div class="room" data-id=${roomId}>${roomId}</div>`).fadeIn(200);
     });
@@ -144,20 +145,24 @@ $(() => {
   // Start game
   $('#start').on('click', () => {
     const time = $('input[name="time-input"]:checked').val();
-    socket.emit('start-game', time);
+    const locationsPack = $('input[name="locations-input"]:checked').val();
+    socket.emit('start-game', {time: time, locationsPack: locationsPack});
   });
 
   socket.on('game-started', (data) => {
     myRoomId = null;
     changePage('game');
-    const isSpy = data.isSpy;
-    const time = data.time;
+    const { isSpy, time, locationsPack } = data;
+    //Display locations
+    $('.location').hide();
+    $(`.${locationsPack}`).show();
+
     $('#time-left').html(time + ':00').css('color', 'black');
     // Start clock
     let minutes = time;
     let seconds = 0;
     clock = setInterval(() => {
-      if (minutes == 0 && seconds == 0) {
+      if (minutes <= 0 && seconds <= 0) {
         $('#time-left').html('Koniec czasu!').css('color', 'red');
         clearInterval(clock);
         return;

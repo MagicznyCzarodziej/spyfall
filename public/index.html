@@ -17,7 +17,7 @@
       <div id="create" class="menu-btn">Stwórz grę</div>
     </div>
     <div id="rooms" class="page" style="display:none;">
-      <div id="rooms-label"></div>
+      <div id="rooms-label">Szukanie...</div>
       <div id="rooms-list"></div>
       <div id="cancel-rooms" class="rooms-btn">Wróć</div>
     </div>
@@ -28,6 +28,11 @@
         <input type="radio" name="time-input" value=5 class="time-input" id="time-5"><label for="time-5">5 min</label> /
         <input type="radio" name="time-input" value=7 class="time-input" id="time-7" checked><label for="time-7">7 min</label> /
         <input type="radio" name="time-input" value=10 class="time-input" id="time-10"><label for="time-10">10 min</label>
+      </div>
+      <div id="lobby-locations" class="admin">
+        <div id="lobby-locations-label">Zestaw lokacji:</div>
+        <input type="radio" name="locations-input" value="standard" class="locations-input" id="locations-pack-standard" checked><label for="locations-pack-standard">Standardowe</label> /
+        <input type="radio" name="locations-input" value="fantasy" class="locations-input" id="locations-pack-fantasy"><label for="locations-pack-fantasy">Fantasy</label>
       </div>
       <div id="players">
         <div id="players-label">Gracze:</div>
@@ -45,31 +50,53 @@
         <div id="player-role"></div>
       </div>
       <div id="locations-label">Miejsca:</div>
-      <div id="locations">
-        <div class="location">Szpital</div>
-        <div class="location">Restauracja</div>
-        <div class="location">Statek pasażerski</div>
-        <div class="location">Zoo</div>
-        <div class="location">Łódź podwodna</div>
-        <div class="location">Szkoła</div>
-        <div class="location">Stacja kosmiczna</div>
-        <div class="location">Teatr</div>
-        <div class="location">Ambasada</div>
-        <div class="location">Samolot</div>
-        <div class="location">Bank</div>
-        <div class="location">Kościół</div>
-        <div class="location">Namiot cyrkowy</div>
-        <div class="location">Korporacja</div>
-        <div class="location">Stacja polarna</div>
-        <div class="location">Supermarket</div>
-        <div class="location">Komisariat</div>
-        <div class="location">Plan filmowy</div>
-        <div class="location">Baza wojskowa</div>
-        <div class="location">Kasyno</div>
-        <div class="location">Pociąg pasażerski</div>
-        <div class="location">Statek piratów</div>
-        <div class="location">Hotel</div>
-        <div class="location">Plaża</div>
+      <div id="locations" >
+        <div class="location standard">Szpital</div>
+        <div class="location standard">Restauracja</div>
+        <div class="location standard">Statek pasażerski</div>
+        <div class="location standard">Zoo</div>
+        <div class="location standard">Łódź podwodna</div>
+        <div class="location standard">Szkoła</div>
+        <div class="location standard">Stacja kosmiczna</div>
+        <div class="location standard">Teatr</div>
+        <div class="location standard">Ambasada</div>
+        <div class="location standard">Samolot</div>
+        <div class="location standard">Bank</div>
+        <div class="location standard">Kościół</div>
+        <div class="location standard">Armia krzyżowców</div>
+        <div class="location standard">Korporacja</div>
+        <div class="location standard">Stacja polarna</div>
+        <div class="location standard">Supermarket</div>
+        <div class="location standard">Komisariat</div>
+        <div class="location standard">Plan filmowy</div>
+        <div class="location standard">Baza wojskowa</div>
+        <div class="location standard">Kasyno</div>
+        <div class="location standard">Pociąg pasażerski</div>
+        <div class="location standard">Statek piratów</div>
+        <div class="location standard">Hotel</div>
+        <div class="location standard">Plaża</div>
+        <div class="location fantasy">Karczma</div>
+        <div class="location fantasy">Zamek</div>
+        <div class="location fantasy">Lochy</div>
+        <div class="location fantasy">Las Elfów</div>
+        <div class="location fantasy">Obóz Orków</div>
+        <div class="location fantasy">Pole bitwy</div>
+        <div class="location fantasy">Targowisko miejskie</div>
+        <div class="location fantasy">Jaskinia pająków</div>
+        <div class="location fantasy">Wieża maga</div>
+        <div class="location fantasy">Legowisko smoka</div>
+        <div class="location fantasy">Przeklęte bagno</div>
+        <div class="location fantasy">Klasztor</div>
+        <div class="location fantasy">Chata</div>
+        <div class="location fantasy">Tajemnicza wyspa</div>
+        <div class="location fantasy">Stary młyn</div>
+        <div class="location fantasy">Cmentarzysko</div>
+        <div class="location fantasy">Kopalnia</div>
+        <div class="location fantasy">Statek</div>
+        <div class="location fantasy">Stajnia</div>
+        <div class="location fantasy">Port</div>
+        <div class="location fantasy">Kuźnia</div>
+        <div class="location fantasy">Świątynia</div>
       </div>
       <div id="cancel-game" class="game-btn">Wyjdź</div>
     </div>

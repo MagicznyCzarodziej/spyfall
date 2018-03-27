@@ -95,18 +95,18 @@ font-weight: bold;
 #lobby-wait {
   font-size: 4rem;
 }
-#lobby-time {
+#lobby-time, #lobby-locations {
   font-size: 4rem;
   color: #666;
 }
-#lobby-time-label {
+#lobby-time-label, #lobby-locations-label {
   font-size: 6rem;
   color: #111;
 }
-.time-input {
+.time-input, .locations-input{
   display: none;
 }
-.time-input:checked + label{
+.time-input:checked + label, .locations-input:checked + label{
   font-weight: bold;
   color: #2980b9;
 }
