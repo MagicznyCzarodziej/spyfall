@@ -4,7 +4,6 @@ $(() => {
   let isAdmin = false;
   let myRoomId = null;
   let tryingToJoin = false;
-  let clock;
 
   $('#username-input').val(Cookies.get('username'));
 
@@ -159,21 +158,16 @@ $(() => {
 
     $('#time-left').html(time + ':00').css('color', 'black');
     // Start clock
-    let minutes = time;
-    let seconds = 0;
-    clock = setInterval(() => {
-      if (minutes <= 0 && seconds <= 0) {
+    const timerWorker = new Worker('timerWorker.js');
+    timerWorker.postMessage(time);
+    timerWorker.onmessage = function (event) {
+      minutes = event.data.minutes;
+      seconds = event.data.seconds
+      if (event.data.ended) {
         $('#time-left').html('Koniec czasu!').css('color', 'red');
-        clearInterval(clock);
-        return;
-      }
-      if (seconds < 0) {
-        seconds = 59;
-        minutes--;
-      }
-      $('#time-left').html(minutes + ':' + ('0' + seconds).slice(-2));
-      seconds--;
-    }, 1000);
+        timerWorker.terminate();
+      } else $('#time-left').html(minutes + ':' + ('0' + seconds).slice(-2));
+    };
 
     if (isSpy) {
       $('#player-role').html('Jesteś <span>szpiegiem</span>');
