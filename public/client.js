@@ -4,6 +4,7 @@ $(() => {
   let isAdmin = false;
   let myRoomId = null;
   let tryingToJoin = false;
+  let timerWorker;
 
   $('#username-input').val(Cookies.get('username'));
 
@@ -158,7 +159,7 @@ $(() => {
 
     $('#time-left').html(time + ':00').css('color', 'black');
     // Start clock
-    const timerWorker = new Worker('timerWorker.js');
+    timerWorker = new Worker('timerWorker.js');
     timerWorker.postMessage(time);
     timerWorker.onmessage = function (event) {
       minutes = event.data.minutes;
@@ -188,8 +189,15 @@ $(() => {
   });
 
   // Leave game
+  window.onbeforeunload = function (e) {
+    if ($('#game').is(':visible')) {
+      return "Na pewno chesz opuścić grę?";
+    }
+  }
+
+
   $('#cancel-game').on('click', () => {
-    clearInterval(clock);
+    timerWorker.terminate();
     changePage('home');
   });
 
