@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Mamy Szpiega</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
     <meta name="viewport" content=" user-scalable=no" />
     <script src="cookie.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -12,28 +12,75 @@
   <body>
     <div id="home" class="page">
       <div id="logo">MamySzpiega</div>
-      <div id="username"><input type="text" name="username" id="username-input" maxlength="20" placeholder="Imię" autofill="on"></div>
+      <div id="username">
+        <input
+          type="text"
+          name="username"
+          id="username-input"
+          maxlength="20"
+          placeholder="Imię"
+          autofill="on"
+        />
+      </div>
       <div id="show-rooms" class="menu-btn">Dołącz do gry</div>
       <div id="create" class="menu-btn">Stwórz grę</div>
     </div>
-    <div id="rooms" class="page" style="display:none;">
+    <div id="rooms" class="page" style="display: none">
       <div id="rooms-label">Szukanie...</div>
       <div id="rooms-list"></div>
       <div id="cancel-rooms" class="rooms-btn">Wróć</div>
     </div>
-    <div id="lobby" class="page" style="display:none;">
+    <div id="lobby" class="page" style="display: none">
       <div id="lobby-wait" class="not-admin">Zaczekaj na rozpoczęcie gry</div>
       <div id="lobby-time" class="admin">
         <div id="lobby-time-label">Czas gry:</div>
-        <input type="radio" name="time-input" value=5 class="time-input" id="time-5"><label for="time-5">5 min</label> /
-        <input type="radio" name="time-input" value=7 class="time-input" id="time-7" checked><label for="time-7">7 min</label> /
-        <input type="radio" name="time-input" value=10 class="time-input" id="time-10"><label for="time-10">10 min</label>
+        <input
+          type="radio"
+          name="time-input"
+          value="5"
+          class="time-input"
+          id="time-5"
+        /><label for="time-5">5 min</label> /
+        <input
+          type="radio"
+          name="time-input"
+          value="7"
+          class="time-input"
+          id="time-7"
+          checked
+        /><label for="time-7">7 min</label> /
+        <input
+          type="radio"
+          name="time-input"
+          value="10"
+          class="time-input"
+          id="time-10"
+        /><label for="time-10">10 min</label>
       </div>
       <div id="lobby-locations" class="admin">
         <div id="lobby-locations-label">Zestaw lokacji:</div>
-        <input type="radio" name="locations-input" value="standard" class="locations-input" id="locations-pack-standard" checked><label for="locations-pack-standard">Standardowe</label> /
-        <input type="radio" name="locations-input" value="bonus" class="locations-input" id="locations-pack-bonus"><label for="locations-pack-bonus">Dodatkowe</label> /
-        <input type="radio" name="locations-input" value="fantasy" class="locations-input" id="locations-pack-fantasy"><label for="locations-pack-fantasy">Fantasy</label>
+        <input
+          type="radio"
+          name="locations-input"
+          value="standard"
+          class="locations-input"
+          id="locations-pack-standard"
+          checked
+        /><label for="locations-pack-standard">Standardowe</label> /
+        <input
+          type="radio"
+          name="locations-input"
+          value="bonus"
+          class="locations-input"
+          id="locations-pack-bonus"
+        /><label for="locations-pack-bonus">Dodatkowe</label> /
+        <input
+          type="radio"
+          name="locations-input"
+          value="fantasy"
+          class="locations-input"
+          id="locations-pack-fantasy"
+        /><label for="locations-pack-fantasy">Fantasy</label>
       </div>
       <div id="players">
         <div id="players-label">Gracze:</div>
@@ -43,7 +90,7 @@
       <div id="start" class="lobby-btn admin">Start</div>
     </div>
 
-    <div id="game" class="page" style="display: none;">
+    <div id="game" class="page" style="display: none">
       <div id="time-left"></div>
       <div id="player-info">
         <div id="info-toggle">[Pokaż/Ukryj informacje]</div>
@@ -51,7 +98,7 @@
         <div id="player-role"></div>
       </div>
       <div id="locations-label">Miejsca:</div>
-      <div id="locations" >
+      <div id="locations">
         <div class="location standard">Szpital</div>
         <div class="location standard">Restauracja</div>
         <div class="location standard">Statek pasażerski</div>
@@ -99,10 +146,10 @@
         <div class="location fantasy">Port</div>
         <div class="location fantasy">Kuźnia</div>
         <div class="location fantasy">Świątynia</div>
-        <div class="location bonus">Cmętarz</div>
+        <div class="location bonus">Cmentarz</div>
         <div class="location bonus">Kopalnia węgla</div>
         <div class="location bonus">Kanały</div>
-        <div class="location bonus">Dach wierzowca</div>
+        <div class="location bonus">Dach wieżowca</div>
         <div class="location bonus">Sklep budowlany</div>
         <div class="location bonus">Plac budowy</div>
         <div class="location bonus">Koncert</div>
